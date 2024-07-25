@@ -3,7 +3,7 @@ import pickle
 import streamlit as st
 import xgboost
 
-loaded_model=pickle.load(open(r'C:\Users\sahil jadhav\OneDrive\Desktop\ML\Deployment\Trained_model.sav','rb')) 
+loaded_model=pickle.load(open(r'C:\\Users\sahil jadhav\\OneDrive\\Desktop\\Deployed ML projects\\DiabetesPrediction\\Trained_model.sav','rb')) 
 
 
 def diabetes_pred(input_data):
