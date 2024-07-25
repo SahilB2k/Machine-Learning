@@ -1,7 +1,7 @@
 import numpy as np
 import pickle
 import streamlit as st
-import xgboost
+
 
 loaded_model=pickle.load(open('Trained_model.sav','rb')) 
 
