@@ -83,6 +83,46 @@ if (selected ==' heart Disease Prediction'):
     with col2:
         chol=st.text_input('Cholestrol')
 
+    with col3:
+        fbs=st.text_input('Flasting Blood Sugar')
+
+    with col1:
+        restecg=st.text_input('Resting ElectroCardioGraphic Result')
+
+    with col2:
+        thalach=st.text_input('Maximum Heart Rate Achived')
+
+    with col3:
+        exang=st.text_input('Exercised Induced Angina')
+    
+    with col1:
+        oldpeak=st.text_input('ST depression INduced by Exercise')
+
+    with col2:
+        slope=st.text_input('Slope of the Peak Exercise')
+
+    with col3:
+        ca=st.text_input('Major Vessels coloured by Flouroscopy')
+
+    with col1:
+        thal=st.text_input('thal:0=normal; 1=fixed; 2=reversable defect')
+
+    heart_diagnosis=''
+
+    if st.button('Heart Disease Test Result'):
+        heart_prediction=heart_disease_model.predict([[age,sex,cp,trestbps,chol,fbs,restecg,thalach,exang,oldpeak,slope,ca,thal]]) 
+
+        if (heart_prediction==1):
+            diab_diagnosis= 'The  Person is having Heart Disease'
+        else:
+            diab_diagnosis = 'The Person is Normal'        
+    st.success(diab_diagnosis)
+
+
+
+    
+
+
     
 
 
