@@ -2,13 +2,13 @@ import pickle
 import streamlit as st
 from streamlit_option_menu import option_menu
 
-diabetes_model = pickle.load(open('Diabetes_model.sav','rb'))
+diabetes_model = pickle.load(open('C:/Users/sahil jadhav/OneDrive/Desktop/Deployed ML projects/MultiDieseasePrediction/Diabetes_model.sav','rb'))
 
-heart_disease_model = pickle.load(open('heartDisease_model.sav','rb'))
+heart_disease_model = pickle.load(open('C:/Users/sahil jadhav/OneDrive/Desktop/Deployed ML projects/MultiDieseasePrediction/heartDisease_model.sav','rb'))
 
-Parkinson_model = pickle.load(open('Parkinson_model.sav','rb'))
+Parkinson_model = pickle.load(open('C:/Users/sahil jadhav/OneDrive/Desktop/Deployed ML projects/MultiDieseasePrediction/Parkinson_model.sav','rb'))
 
-with st.slider:
+with st.sidebar:
 
     selected = option_menu('Multiple Disease Prediction System',
                            
@@ -58,9 +58,33 @@ if (selected == 'Diabetes Prediction'):
         if (diab_prediction==1):
             diab_diagnosis= 'The  Person is Diabetic'
         else:
-            diab_diagnosis = 'The Person is Not Diabetic'
+            diab_diagnosis = 'The Person is Not Diabetic'        
     st.success(diab_diagnosis)
         
+if (selected ==' heart Disease Prediction'):
+
+    # page title 
+    st.title('Heart Disease Prediction')
+
+    col1,col2,col3=st.columns(3)
+
+    with col1:
+        age=st.text_input('Age')
+
+    with col2:
+        sex = st.text_input('Sex')
+
+    with col3:
+        cp=st.text_input('Chest Pain')
+
+    with col1:
+        trestbps=st.text_input('Testing Blood Pressure')
+
+    with col2:
+        chol=st.text_input('Cholestrol')
+
+    
+
 
 
 
