@@ -2,11 +2,11 @@ import pickle
 import streamlit as st
 from streamlit_option_menu import option_menu
 
-diabetes_model = pickle.load(open('C:/Users/sahil jadhav/OneDrive/Desktop/Deployed ML projects/MultiDieseasePrediction/Diabetes_model.sav','rb'))
+diabetes_model = pickle.load(open('Diabetes_model.sav','rb'))
 
-heart_disease_model = pickle.load(open('C:/Users/sahil jadhav/OneDrive/Desktop/Deployed ML projects/MultiDieseasePrediction/heartDisease_model.sav','rb'))
+heart_disease_model = pickle.load(open('heartDisease_model.sav','rb'))
 
-Parkinson_model = pickle.load(open('C:/Users/sahil jadhav/OneDrive/Desktop/Deployed ML projects/MultiDieseasePrediction/Parkinson_model.sav','rb'))
+Parkinson_model = pickle.load(open('Parkinson_model.sav','rb'))
 
 with st.sidebar:
 
@@ -61,7 +61,7 @@ if (selected == 'Diabetes Prediction'):
             diab_diagnosis = 'The Person is Not Diabetic'        
     st.success(diab_diagnosis)
         
-if (selected ==' heart Disease Prediction'):
+if (selected ==' Heart Disease Prediction'):
 
     # page title 
     st.title('Heart Disease Prediction')
@@ -113,10 +113,10 @@ if (selected ==' heart Disease Prediction'):
         heart_prediction=heart_disease_model.predict([[age,sex,cp,trestbps,chol,fbs,restecg,thalach,exang,oldpeak,slope,ca,thal]]) 
 
         if (heart_prediction==1):
-            diab_diagnosis= 'The  Person is having Heart Disease'
+            heart_diagnosis= 'The  Person is having Heart Disease'
         else:
-            diab_diagnosis = 'The Person is Normal'        
-    st.success(diab_diagnosis)
+            heart_diagnosis = 'The Person is Normal'        
+    st.success(heart_diagnosis)
 
 
 
